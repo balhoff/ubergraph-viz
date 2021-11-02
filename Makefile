@@ -6,7 +6,7 @@
 
 UBERGRAPH="https://stars-app.renci.org/ubergraph/sparql"
 
-all: two-hop-neighborhood.png
+all: two-hop-neighborhood.pdf
 
 %.result.json: sparql/%.rq
 	 curl -X POST --data-binary @$< --header "Content-Type:application/sparql-query" --header "Accept:application/json" $(UBERGRAPH) >$@
@@ -17,5 +17,5 @@ all: two-hop-neighborhood.png
 %.dot: %.obograph.json style/ubergraph-style.json
 	og2dot.js -s style/ubergraph-style.json $< >$@
 
-%.png: %.dot
-	dot $< -Tpng -Grankdir=BT >$@
+%.pdf: %.dot
+	dot $< -Tpdf -Grankdir=BT >$@
