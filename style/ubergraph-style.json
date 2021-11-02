@@ -1,0 +1,62 @@
+{
+    "styles": ["filled", "rounded"],
+    "types": ["class"],
+    "fillcolor": "white",
+    "highlightIds": [],
+    "relationProperties": {
+        "is_a": {
+            "color": "black"
+        },
+        "http://purl.obolibrary.org/obo/BFO_0000051": {
+            "color": "green"
+        },
+        "http://purl.obolibrary.org/obo/BFO_0000050": {
+            "color": "blue"
+        }
+    },
+    "prefixProperties": {
+        "http://purl.obolibrary.org/obo/UBERON_": {
+            "fillcolor": "yellow"
+        },
+        "http://purl.obolibrary.org/obo/RO_": {
+            "fillcolor": "pink"
+        },
+        "http://purl.obolibrary.org/obo/BFO_": {
+            "fillcolor": "cyan"
+        }
+    },
+    "conditionalProperties": [
+        {
+            "conditions": {
+                "type":"PROPERTY"
+            },
+            "properties": {
+                "shape": "ellipse"
+            }
+        },
+        {
+            "conditions": {
+                "subset":"non_informative"
+            },
+            "properties": {
+                "style": "invisible"
+            }
+        },
+        {
+            "conditions": {
+                "subset":"pheno_slim"
+            },
+            "properties": {
+                "fillcolor": "pink"
+            }
+        },
+        {
+            "conditions": {
+                "subset":"efo_slim"
+            },
+            "properties": {
+                "fillcolor": "blue"
+            }
+        }
+    ]
+}
