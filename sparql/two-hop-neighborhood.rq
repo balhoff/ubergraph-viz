@@ -1,7 +1,8 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX hint: <http://www.bigdata.com/queryHints#>
-PREFIX node: <http://purl.obolibrary.org/obo/UBERON_0001463> # specify focus node here
-SELECT DISTINCT ?s (MIN(?s_label) AS ?slabel) ?p (MIN(?p_label) AS ?plabel) ?o (MIN(?o_label) AS ?olabel)
+# specify focus node here
+PREFIX node: <http://purl.obolibrary.org/obo/UBERON_0001463> 
+SELECT ?s (MIN(?s_label) AS ?slabel) ?p (MIN(?p_label) AS ?plabel) ?o (MIN(?o_label) AS ?olabel)
 WHERE {
   {
     SELECT DISTINCT ?o
@@ -46,9 +47,11 @@ WHERE {
     }
   }
   UNION { VALUES ?s { node: } }
-      hint:Prior hint:runFirst true .
+  # this hint is required for Blazegraph to run this query efficiently
+  hint:Prior hint:runFirst true .
   GRAPH <http://reasoner.renci.org/nonredundant> {
     ?s ?p ?o .
+    FILTER(?s != ?o)
   }
   ?s rdfs:label ?s_label .
   { ?p rdfs:label ?p_label . } UNION { VALUES ( ?p ?p_label ) { ( rdfs:subClassOf "subClassOf" ) } }
