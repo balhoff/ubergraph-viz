@@ -1,22 +1,40 @@
 {
     "styles": ["filled", "rounded"],
     "types": ["class"],
-    "fillcolor": "white",
+    "fillcolor": "cornsilk",
     "highlightIds": [],
     "relationProperties": {
-        "is_a": {
-            "color": "black"
+        "http://www.w3.org/2000/01/rdf-schema#": {
+            "color": "azure4"
         },
         "http://purl.obolibrary.org/obo/BFO_0000051": {
-            "color": "green"
+            "color": "deepskyblue3"
+        },
+        "http://purl.obolibrary.org/obo/RO_0002551": {
+            "color": "deepskyblue4"
         },
         "http://purl.obolibrary.org/obo/BFO_0000050": {
-            "color": "blue"
+            "color": "dodgerblue3"
+        },
+        "http://purl.obolibrary.org/obo/RO_0002576": {
+            "color": "dodgerblue4"
+        },
+        "http://purl.obolibrary.org/obo/BSPO_0001113": {
+            "color": "dodgerblue4"
+        },
+        "http://purl.obolibrary.org/obo/RO_0002131": {
+            "color": "cadetblue"
+        },
+        "http://purl.obolibrary.org/obo/RO_0002202": {
+            "color": "aquamarine4"
+        },
+        "http://purl.obolibrary.org/obo/RO_0002387": {
+            "color": "aquamarine3"
         }
     },
     "prefixProperties": {
         "http://purl.obolibrary.org/obo/UBERON_": {
-            "fillcolor": "yellow"
+            "fillcolor": "cornsilk"
         },
         "http://purl.obolibrary.org/obo/RO_": {
             "fillcolor": "pink"
